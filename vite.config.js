@@ -20,6 +20,6 @@ export default defineConfig({
       },
     },
   },
-  // base: '/owrtc_frontend/',
+  base: '/owrtcFrontend/',
   plugins: [react()],
 })
