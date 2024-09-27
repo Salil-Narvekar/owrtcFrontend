@@ -245,7 +245,8 @@ const AssignmentForm = () => {
 
       } else if (action === 'update') {
 
-        axios.put(`/assignment_Api/updateAssignment/${assignmentId}/`, assignmentDetails)
+        console.log('hello')
+        axios.put(`${baseURL}/assignment_Api/updateAssignment/${assignmentId}/`, assignmentDetails)
           .then((res) => {
 
             if (res.status === 201) {
