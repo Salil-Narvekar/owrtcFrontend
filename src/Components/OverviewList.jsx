@@ -4,11 +4,13 @@ import ButtonSmall from './ButtonSmall'
 import ReactModal from 'react-modal'
 import ButtonPrimary from './ButtonPrimary'
 import { FaRegStar } from "react-icons/fa";
+import baseURL from '../ApiBaseUrl/baseUrl'
 import axios from 'axios'
 import Loader from './Loader'
 
 const OverviewList = ({ valA, valB, valC, releaseButtonRequired, ratingRequired, employeeId, employeeName, ratingValue, employeeRole, employeeWIPValue, assignmentDetails }) => {
 
+    const baseUrl = baseURL
     const [loader, setLoader] = useState(false)
     const [openReleaseModal, setOpenReleaseModal] = useState(false)
     const [selectedStars, setSelectedStars] = useState(0)
@@ -51,7 +53,7 @@ const OverviewList = ({ valA, valB, valC, releaseButtonRequired, ratingRequired,
             }
             // console.log(newRating)
 
-            axios.put(`/employee_Api/updateEmployee/${employeeId}`, newRating)
+            axios.put(`${baseUrl}/employee_Api/updateEmployee/${employeeId}`, newRating)
                 .then((res) => {
 
                     if (res.status === 201) {
@@ -106,7 +108,7 @@ const OverviewList = ({ valA, valB, valC, releaseButtonRequired, ratingRequired,
             }
             // console.log(newTeam)
 
-            axios.put(`/assignment_Api/updateAssignment/${assignmentDetails.id}/`, newTeam)
+            axios.put(`${baseUrl}/assignment_Api/updateAssignment/${assignmentDetails.id}/`, newTeam)
                 .then((res) => {
 
                     if (res.status === 201) {
