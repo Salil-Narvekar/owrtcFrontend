@@ -49,7 +49,7 @@ const EmployeeForm = () => {
     if (employeeId) {
       setLoader(true)
 
-      axios.get(`/employee_Api/getEmployees/${employeeId}`)
+      axios.get(`/employee_Api/getEmployees/${employeeId}/`)
         .then((res) => {
           if (res.status === 200) {
 
