@@ -49,7 +49,7 @@ const EmployeeForm = () => {
     if (employeeId) {
       setLoader(true)
 
-      axios.get(`/employee_Api/getEmployees/${employeeId}/`)
+      axios.get(`${baseURL}/employee_Api/getEmployees/${employeeId}/`)
         .then((res) => {
           if (res.status === 200) {
 
@@ -143,7 +143,7 @@ const EmployeeForm = () => {
 
         setLoader(true)
 
-        axios.put(`/employee_Api/updateEmployee/${employeeId}`, employeeDetails)
+        axios.put(`${baseURL}/employee_Api/updateEmployee/${employeeId}`, employeeDetails)
           .then((res) => {
 
             if (res.status === 201) {

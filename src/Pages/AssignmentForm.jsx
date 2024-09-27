@@ -245,7 +245,6 @@ const AssignmentForm = () => {
 
       } else if (action === 'update') {
 
-        console.log('hello')
         axios.put(`${baseURL}/assignment_Api/updateAssignment/${assignmentId}/`, assignmentDetails)
           .then((res) => {
 
